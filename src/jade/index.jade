@@ -10,15 +10,19 @@ html(ng-app="marre")
   body
 
     .container(ng-controller="MainController")
-      .header
-        h1 Marres
+      h1 Placera mera!
 
-      .panel.panel-success
+      .panel.panel-success(ng-show="currentYear == 2001")
         .panel-heading Information
         .panel-body Du har fått tre barnbidrag + fler barnstillägg(3150 + 604 = 3754 kr) att placera på börsen efter bästa förmåga!
 
+      .panel.panel-success(ng-show="currentYear == 2009")
+        .panel-heading Cloetta börsnoteras!
+        .panel-body Ett erbjudande till våra stamkunder, teckna Cloetta B nu
+
       .panel.panel-default
-        .panel-heading Tillgångar {{currentYear}}
+        .panel-heading
+          h4 Tillgångar {{currentYear}}
         .panel-body
           div Likvida medel:&nbsp;
            strong {{cash}} kr
@@ -26,12 +30,14 @@ html(ng-app="marre")
             strong{{portfolioValue()}} kr
           div Totalt:&nbsp;
             strong {{totalValue()}} kr
+          div Förändring:&nbsp;
+            strong {{ (totalValue() - originalCash) / 100}} %
 
       h2 Aktielista:
       ul.list-group
         li.list-group-item.stock(ng-repeat="(stock, value) in stocks")
           .stock-title {{stock}}
-          .stock-value Kurs: {{value}} ( {{ previousValue(stock) }} ) 
+          .stock-value Kurs: {{value}} (Föregående år: {{ previousValue(stock) }} ) 
           .stock-holdings Innehav:&nbsp;
             span.stock-holdings-count <strong>{{ stockHoldingsCount(stock) }}</strong> st&nbsp;
             span.stock-holdings-value till ett värde av <strong>{{ stockHoldingsValue(stock) }}</strong> kr
@@ -52,3 +58,8 @@ html(ng-app="marre")
 
     each jsFile in jsFiles
       script(src="js/#{jsFile}")
+
+    script.
+      $(function() {
+        FastClick.attach(document.body);
+      });

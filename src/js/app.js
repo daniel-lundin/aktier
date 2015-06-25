@@ -1,6 +1,7 @@
 angular.module('marre', [])
   .controller('MainController', ['$scope', '$http', function($scope, $http) {
 
+    $scope.originalCash = 3754;
     $scope.currentYear = 2001;
     $scope.yearIndex = 0;
 
@@ -27,13 +28,18 @@ angular.module('marre', [])
     };
 
     $scope.init = function() {
+      var shareToken = $scope.readShareUrl();
+
+      if(shareToken) {
+        $scope.cash = shareToken.cash;
+        $scope.portfolio = shareToken.portfolio;
+        $scope.yearIndex = shareToken.yearIndex;
+        $scope.currentYear = 2001 + shareToken.yearIndex;
+      }
+
       $http.get('assets/data.json')
         .success(function(data) {
-          console.log('data loaded');
-
           $scope.allData = data;
-          console.log($scope.allData);
-
           $scope.stocks = $scope.getStockDataForYearIndex($scope.yearIndex);
         });
     };
@@ -87,10 +93,12 @@ angular.module('marre', [])
       $scope.cash -= $scope.stocks[stock];
 
       if($scope.portfolio[stock] !== undefined) {
-        return $scope.portfolio[stock] += 1;
+        $scope.portfolio[stock] += 1;
+      } else {
+        $scope.portfolio[stock] = 1;
       }
 
-      $scope.portfolio[stock] = 1;
+      $scope.updateShareUrl();
     };
 
     $scope.decreaseHolding = function(stock) {
@@ -100,6 +108,7 @@ angular.module('marre', [])
       if($scope.portfolio[stock] >= 1) {
         $scope.cash += $scope.stocks[stock];
         $scope.portfolio[stock] -= 1;
+        $scope.updateShareUrl();
       }
     };
 
@@ -107,6 +116,26 @@ angular.module('marre', [])
       $scope.yearIndex++;
       $scope.currentYear++;
       $scope.stocks = $scope.getStockDataForYearIndex($scope.yearIndex);
+      $scope.updateShareUrl();
+      window.scrollTo(0, 0);
+    };
+
+    $scope.updateShareUrl = function() {
+      var shareToken = {
+        cash: $scope.cash,
+        portfolio: $scope.portfolio,
+        yearIndex: $scope.yearIndex
+      };
+
+      window.location.hash = btoa(JSON.stringify(shareToken));
+    };
+
+    $scope.readShareUrl = function() {
+      try {
+        return JSON.parse(atob(window.location.hash.substr(1)));
+      } catch(e) {
+        return null;
+      }
     };
 
     $scope.init();
