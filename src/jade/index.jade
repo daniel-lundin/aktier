@@ -1,0 +1,54 @@
+doctype html
+html(ng-app="marre")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    if develop
+      link(href="css/app.css", type="text/css", rel="stylesheet")
+    else
+      link(href="css/app-#{version}.min.css", type="text/css", rel="stylesheet")
+  body
+
+    .container(ng-controller="MainController")
+      .header
+        h1 Marres
+
+      .panel.panel-success
+        .panel-heading Information
+        .panel-body Du har fått tre barnbidrag + fler barnstillägg(3150 + 604 = 3754 kr) att placera på börsen efter bästa förmåga!
+
+      .panel.panel-default
+        .panel-heading Tillgångar {{currentYear}}
+        .panel-body
+          div Likvida medel:&nbsp;
+           strong {{cash}} kr
+          div Värde aktieportfölj:&nbsp;
+            strong{{portfolioValue()}} kr
+          div Totalt:&nbsp;
+            strong {{totalValue()}} kr
+
+      h2 Aktielista:
+      ul.list-group
+        li.list-group-item.stock(ng-repeat="(stock, value) in stocks")
+          .stock-title {{stock}}
+          .stock-value Kurs: {{value}} ( {{ previousValue(stock) }} ) 
+          .stock-holdings Innehav:&nbsp;
+            span.stock-holdings-count <strong>{{ stockHoldingsCount(stock) }}</strong> st&nbsp;
+            span.stock-holdings-value till ett värde av <strong>{{ stockHoldingsValue(stock) }}</strong> kr
+          .buy-controls
+            button.dec.btn.btn-danger(ng-click="decreaseHolding(stock)")
+              span.glyphicon.glyphicon-minus
+              | Sälj
+            button.inc.btn.btn-success(ng-click="increaseHolding(stock)")
+              span.glyphicon.glyphicon-plus
+              | Köp
+
+      button.btn.btn-success.btn-block(ng-click="nextYear()") Nästa år
+
+    if develop
+      each jsFile in jsLibFiles
+        script(src="js/#{jsFile}")
+
+
+    each jsFile in jsFiles
+      script(src="js/#{jsFile}")

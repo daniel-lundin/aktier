@@ -1,0 +1,24 @@
+@import "responsive-mixins";
+@import "vendor/bootstrap.min";
+
+.stock {
+
+  .stock-title {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.buy-controls {
+  margin-top: 10px;
+
+  .dec {
+    margin-right: 20px;
+  }
+
+  .glyphicon {
+    margin-right: 10px;
+  }
+}
+
+

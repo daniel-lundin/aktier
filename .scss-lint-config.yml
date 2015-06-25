@@ -1,0 +1,29 @@
+exclude:
+  - 'src/scss/reset.scss'
+
+linters:
+  BorderZero:
+    enabled: false
+
+  PropertySortOrder:
+    enabled: false
+
+  Comment:
+    enabled: false
+
+  StringQuotes:
+    enabled: true
+    style: "double_quotes"
+
+  Compass::*:
+    enabled: false
+
+  NameFormat:
+    convention: "BEM"
+
+  PlaceholderInExtend:
+    enabled: false
+
+  Indentation:
+    enabled: true
+    width: 2
