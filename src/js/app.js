@@ -5,13 +5,11 @@ angular.module('marre', [])
     $scope.currentYear = 2001;
     $scope.yearIndex = 0;
 
-    $scope.stocks = {
-      'Ericsson B': 13,
-      'TeliaSonera': 37,
-      'Kinnevik': 137,
-      'ICA': 73
+    $scope.allData ={
+      stocks: {},
+      yearTexts: []
     };
-
+    $scope.stocks = {};
     $scope.cash = 3754;
     $scope.portfolio = {};
 
@@ -40,6 +38,7 @@ angular.module('marre', [])
       $http.get('assets/data.json')
         .success(function(data) {
           $scope.allData = data;
+          console.log(data);
           $scope.stocks = $scope.getStockDataForYearIndex($scope.yearIndex);
         });
     };
@@ -47,9 +46,9 @@ angular.module('marre', [])
     $scope.getStockDataForYearIndex = function(index) {
       var stocks = {};
 
-      for(var stockName in $scope.allData) {
-        if($scope.allData[stockName][index] !== null) {
-          stocks[stockName] = $scope.allData[stockName][index];
+      for(var stockName in $scope.allData.stocks) {
+        if($scope.allData.stocks[stockName][index] !== null) {
+          stocks[stockName] = $scope.allData.stocks[stockName][index];
         }
       }
 

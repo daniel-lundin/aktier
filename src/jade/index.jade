@@ -20,6 +20,10 @@ html(ng-app="marre")
         .panel-heading Cloetta börsnoteras!
         .panel-body Ett erbjudande till våra stamkunder, teckna Cloetta B nu
 
+      .panel.panel-success(ng-show="allData.yearTexts[yearIndex].heading")
+        .panel-heading {{ allData.yearTexts[yearIndex].heading }}
+        .panel-body {{ allData.yearTexts[yearIndex].description }}
+
       .panel.panel-default
         .panel-heading
           h4 Tillgångar {{currentYear}}

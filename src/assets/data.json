@@ -1,1 +1,185 @@
-{"Sectra B":[45,57,40,55,76,59,71,60,44,29,34,45,50,83,117],"Saab":[94,127,101,102,117,166,183,172,68,96,148,104,140,190,222],"Eniro":[119,83,63,57,85,79,89,32,23,16,23,10,18,47,1],"Boliden":[null,28,11,24,27,108,144,72,56,86,117,96,97,93,181],"Cloetta B":[null,null,null,null,null,null,null,null,11,15,14,14,17,17,26],"Tele2":[133,61,90,102,70,75,116,124,75,110,121,109,81,78,97],"Volvo B":[31,35,27,45,56,69,140,97,48,77,109,81,98,98,115],"SCA":[77,113,87,95,84,100,119,99,85,86,95,102,173,188,225]}
+{
+  "stocks": {
+    "Sectra B": [
+      45,
+      57,
+      40,
+      55,
+      76,
+      59,
+      71,
+      60,
+      44,
+      29,
+      34,
+      45,
+      50,
+      83,
+      117
+    ],
+    "Saab": [
+      94,
+      127,
+      101,
+      102,
+      117,
+      166,
+      183,
+      172,
+      68,
+      96,
+      148,
+      104,
+      140,
+      190,
+      222
+    ],
+    "Eniro": [
+      119,
+      83,
+      63,
+      57,
+      85,
+      79,
+      89,
+      32,
+      23,
+      16,
+      23,
+      10,
+      18,
+      47,
+      1
+    ],
+    "Boliden": [
+      null,
+      28,
+      11,
+      24,
+      27,
+      108,
+      144,
+      72,
+      56,
+      86,
+      117,
+      96,
+      97,
+      93,
+      181
+    ],
+    "Cloetta B": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      11,
+      15,
+      14,
+      14,
+      17,
+      17,
+      26
+    ],
+    "Tele2": [
+      133,
+      61,
+      90,
+      102,
+      70,
+      75,
+      116,
+      124,
+      75,
+      110,
+      121,
+      109,
+      81,
+      78,
+      97
+    ],
+    "Volvo B": [
+      31,
+      35,
+      27,
+      45,
+      56,
+      69,
+      140,
+      97,
+      48,
+      77,
+      109,
+      81,
+      98,
+      98,
+      115
+    ]
+  },
+  "yearTexts": [
+    {
+      "heading": "Placera mera öppnar!",
+      "description": "Den nya mobiltjänsten Placera mera öppnar sina dörrar. Svenskarna satsar sina barnbidrag"
+    },
+    {
+      "heading": "Ett blandat börsår för svenskarna",
+      "description": "Eniro och Tele2 rasar, är börsbubblar över? Martin kämpar vidare på gymnasiet"
+    },
+    {
+      "heading": "SVART BÖRSÅR!",
+      "description": "Det närmar sig studenten och svenskarnas portfölj utraderas, ingen solsemester i år"
+    },
+    {
+      "heading": "Återhämtningen",
+      "description": "SCA och Tele2 backar men övriga börsen stärks, den som placerat rätt kan avnjuta extra öl på martins student!"
+    },
+    {
+      "heading": "Martin flyttar till Linköping",
+      "description": "Martin börjar datalinjen i Linköping, Saab och Sectra skjuter i höjden direkt! Skogsbranchen saknar Martin i värmland, SCA rasar 10,50 kr."
+    },
+    {
+      "heading": "Analys, linalg och diskmatte! Börsen går blandat.",
+      "description": "Grunken och analysen gick skapligt! Men Sectra får underrättelser från Bängan, sjunker 17 kr. "
+    },
+    {
+      "heading": "Superåret",
+      "description": "Hela börsen stiger"
+    },
+    {
+      "heading": "",
+      "description": "Det är dags att bestämma profil. Börsen rasar pga osäkerheten krings Martins karriär. "
+    },
+    {
+      "heading": "Chokladjätten börsintroduceras",
+      "description": "TIPS: I ett dåligt börsklimat äts det mycket tröstchoklad. Snart kommer examensfirandet, chokladen kommer gå i höjden. Cloetta introduceras och Placera mera har specialerbjudande, köp aktien för attraktiva 11,43 kr. "
+    },
+    {
+      "heading": "",
+      "description": ""
+    },
+    {
+      "heading": "",
+      "description": ""
+    },
+    {
+      "heading": "",
+      "description": ""
+    },
+    {
+      "heading": "Tele2 rasar och Martin friar",
+      "description": "Tele2 rasar 28.28 kr, men Martin vågar ändå fria till Ida! Hur går portföljen?"
+    },
+    {
+      "heading": "",
+      "description": ""
+    },
+    {
+      "heading": "",
+      "description": ""
+    }
+  ]
+}

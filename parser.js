@@ -4,23 +4,41 @@ function parse(data) {
 
   // Get rid of header
   var rows = data.split('\n');
-  rows = rows.splice(1);
 
-  var result = {};
+  var stockRows = rows.slice(3, 10);
 
-  rows.forEach(function(row) {
+  var result = {
+    stocks: {},
+    yearTexts: []
+  };
+
+  stockRows.forEach(function(row) {
     var columns = row.split('\t');
     var stockName = columns.splice(0, 1)[0];
 
     if(stockName === "")
       return;
 
-    result[stockName] = [];
+    result.stocks[stockName] = [];
 
     columns.forEach(function(value, index) {
       if (index === 0 || index === 16)
         return;
-      result[stockName].push(parseInt(value, 10));
+      result.stocks[stockName].push(parseInt(value, 10));
+    });
+  });
+
+  var yearTextsHeadings = rows[35].split('\t');
+  var yearTextsDescriptions = rows[36].split('\t');
+  
+  yearTextsHeadings.forEach(function(heading, index) {
+    if(index === 0 || index === 1) {
+      return;
+    }
+
+    result.yearTexts.push({
+      heading: heading,
+      description: yearTextsDescriptions[index]
     });
   });
 
@@ -34,7 +52,7 @@ fs.readFile('data.tsv', 'utf-8', function(err, data) {
   }
 
   var parsed = parse(data);
-  fs.writeFile('src/assets/data.json', JSON.stringify(parsed), function() {
+  fs.writeFile('src/assets/data.json', JSON.stringify(parsed, null, 2), function() {
     console.log('src/assets/data.json written.');
   });
 });
