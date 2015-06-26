@@ -1,19 +1,54 @@
 @import "responsive-mixins";
 @import "vendor/bootstrap.min";
 
+body {
+  background: #eee;
+  font-family: "Raleway";
+}
+
+.header {
+  background: #46465e;
+  margin-bottom: 10px;
+  padding: 5px 0;
+
+  > h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    color: #ccc;
+  }
+}
+
 .stock {
 
   .stock-title {
     font-size: 25px;
     font-weight: bold;
+    height: 84px;
+    line-height: 84px;
+    float: left;
+  }
+
+  .stock-info {
+    float: right;
+    height: 84px;
+    width: 50%;
   }
 }
 
 .buy-controls {
   margin-top: 10px;
+  
+  > button {
+    width: 49%;
+  }
 
   .dec {
-    margin-right: 20px;
+    margin-right: 1%;
+  }
+
+  .inc {
+    margin-left: 1%;
   }
 
   .glyphicon {
@@ -21,4 +56,35 @@
   }
 }
 
+.next-year {
+  margin-bottom: 10px;
+}
+
+
+// Bootstrap overrides
+
+.panel-heading {
+  border-radius: 0;
+}
+
+.panel {
+  border-radius: 0;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+}
+
+.list-group {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+}
+
+.list-group-item {
+  overflow: auto;
+  
+  &:first-child {
+    border-radius: 0;
+  }
+
+  &:last-child {
+    border-radius: 0;
+  }
+}
 

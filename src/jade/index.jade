@@ -3,30 +3,29 @@ html(ng-app="marre")
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
     if develop
       link(href="css/app.css", type="text/css", rel="stylesheet")
     else
       link(href="css/app-#{version}.min.css", type="text/css", rel="stylesheet")
   body
 
-    .container(ng-controller="MainController")
+    .header
       h1 Placera mera!
+    .container(ng-controller="MainController")
 
       .panel.panel-success(ng-show="currentYear == 2001")
         .panel-heading Information
         .panel-body Du har fått tre barnbidrag + fler barnstillägg(3150 + 604 = 3754 kr) att placera på börsen efter bästa förmåga!
 
-      .panel.panel-success(ng-show="currentYear == 2009")
-        .panel-heading Cloetta börsnoteras!
-        .panel-body Ett erbjudande till våra stamkunder, teckna Cloetta B nu
-
-      .panel.panel-success(ng-show="allData.yearTexts[yearIndex].heading")
-        .panel-heading {{ allData.yearTexts[yearIndex].heading }}
+      .panel.panel-default(ng-show="allData.yearTexts[yearIndex].heading")
+        .panel-heading {{currentYear}} - {{ allData.yearTexts[yearIndex].heading }}
         .panel-body {{ allData.yearTexts[yearIndex].description }}
 
       .panel.panel-default
-        .panel-heading
-          h4 Tillgångar {{currentYear}}
+        .panel-heading Tillgångar
         .panel-body
           div Likvida medel:&nbsp;
            strong {{cash}} kr
@@ -41,10 +40,11 @@ html(ng-app="marre")
       ul.list-group
         li.list-group-item.stock(ng-repeat="(stock, value) in stocks")
           .stock-title {{stock}}
-          .stock-value Kurs: {{value}} (Föregående år: {{ previousValue(stock) }} ) 
-          .stock-holdings Innehav:&nbsp;
-            span.stock-holdings-count <strong>{{ stockHoldingsCount(stock) }}</strong> st&nbsp;
-            span.stock-holdings-value till ett värde av <strong>{{ stockHoldingsValue(stock) }}</strong> kr
+          .stock-info
+            .stock-value Kurs: {{value}} (F. år: {{ previousValue(stock) }} ) 
+            .stock-holdings Innehav:&nbsp;
+              span.stock-holdings-count <strong>{{ stockHoldingsCount(stock) }}</strong> st&nbsp;
+              span.stock-holdings-value till ett värde av <strong>{{ stockHoldingsValue(stock) }}</strong> kr
           .buy-controls
             button.dec.btn.btn-danger(ng-click="decreaseHolding(stock)")
               span.glyphicon.glyphicon-minus
@@ -53,7 +53,7 @@ html(ng-app="marre")
               span.glyphicon.glyphicon-plus
               | Köp
 
-      button.btn.btn-success.btn-block(ng-click="nextYear()") Nästa år
+      button.btn.btn-success.btn-block.next-year(ng-click="nextYear()") Gå till nästa år
 
     if develop
       each jsFile in jsLibFiles
