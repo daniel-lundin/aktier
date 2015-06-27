@@ -5,7 +5,7 @@ html(ng-app="marre")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
     meta(name="apple-mobile-web-app-capable", content="yes")
     
-    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+    link(href="http://fonts.googleapis.com/css?family=Open+Sans", rel="stylesheet", type="text/css")
     if develop
       link(href="css/app.css", type="text/css", rel="stylesheet")
     else
@@ -17,8 +17,12 @@ html(ng-app="marre")
     .container(ng-controller="MainController")
 
       .panel.panel-success(ng-show="currentYear == 2001")
-        .panel-heading Information
-        .panel-body Du har fått tre barnbidrag + fler barnstillägg(3150 + 604 = 3754 kr) att placera på börsen efter bästa förmåga!
+        .panel-heading Spelregler
+        .panel-body 
+          p Året är 2001.
+          p Du har fått tre barnbidrag + fler barnstillägg(3150 + 604 = 3754 kr) att placera på börsen.
+          p Under dagen förflyttar vi oss genom och tiden och du får möjlighet att placera om varje år.
+          p.lead Choose wisely!
 
       .panel.panel-default(ng-show="allData.yearTexts[yearIndex].heading")
         .panel-heading {{currentYear}} - {{ allData.yearTexts[yearIndex].heading }}
@@ -53,6 +57,7 @@ html(ng-app="marre")
               span.glyphicon.glyphicon-plus
               | Köp
 
+      p.lead Glöm inte göra en backup genom att dela sidan!
       button.btn.btn-success.btn-block.next-year(ng-click="nextYear()") Gå till nästa år
 
     if develop

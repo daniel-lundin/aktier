@@ -118,6 +118,23 @@
       98,
       98,
       115
+    ],
+    "SCA": [
+      77,
+      113,
+      87,
+      95,
+      84,
+      100,
+      119,
+      99,
+      85,
+      86,
+      95,
+      102,
+      173,
+      188,
+      225
     ]
   },
   "yearTexts": [
@@ -135,7 +152,7 @@
     },
     {
       "heading": "Återhämtningen",
-      "description": "SCA och Tele2 backar men övriga börsen stärks, den som placerat rätt kan avnjuta extra öl på martins student!"
+      "description": "SCA och Tele2 backar men övriga börsen stärks, den som placerat rätt kan avnjuta extra öl på Martins student!"
     },
     {
       "heading": "Martin flyttar till Linköping",
@@ -147,38 +164,38 @@
     },
     {
       "heading": "Superåret",
-      "description": "Hela börsen stiger"
+      "description": "Martin besöker Japan och hela börsen stiger"
     },
     {
-      "heading": "",
-      "description": "Det är dags att bestämma profil. Börsen rasar pga osäkerheten krings Martins karriär. "
+      "heading": "DÖMD",
+      "description": "DÖMD förberedelser och dags att bestämma profil. Börsen rasar pga osäkerheten kring Martins karriär. "
     },
     {
       "heading": "Chokladjätten börsintroduceras",
       "description": "TIPS: I ett dåligt börsklimat äts det mycket tröstchoklad. Snart kommer examensfirandet, chokladen kommer gå i höjden. Cloetta introduceras och Placera mera har specialerbjudande, köp aktien för attraktiva 11,43 kr. "
     },
     {
-      "heading": "",
-      "description": ""
+      "heading": "Martin flyttar till Stockholm",
+      "description": "Martin avslutar sitt exjobb på Saab vilket direkt gör att Saabs negativa trend vänder! Jiu jutsu i Brasilien."
     },
     {
       "heading": "",
       "description": ""
     },
     {
-      "heading": "",
-      "description": ""
+      "heading": "Isak föds",
+      "description": "Hur ska det gå för Martin som pappa? Osäkert på börsen."
     },
     {
       "heading": "Tele2 rasar och Martin friar",
       "description": "Tele2 rasar 28.28 kr, men Martin vågar ändå fria till Ida! Hur går portföljen?"
     },
     {
-      "heading": "",
-      "description": ""
+      "heading": "Edvin dyker upp",
+      "description": "Sectra går starkt."
     },
     {
-      "heading": "",
+      "heading": "Bröllop",
       "description": ""
     }
   ]

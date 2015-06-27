@@ -138,7 +138,15 @@ module.exports = function(grunt) {
             ],
             dest: '<%= buildFolder %>/',
             cwd: 'src/'
-          }
+          },
+          {
+            expand: true,
+            src: [
+              'fonts/*'
+            ],
+            dest: '<%= buildFolder %>/',
+            cwd: 'src/'
+          },
         ]
       }
     },

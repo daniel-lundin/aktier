@@ -3,7 +3,15 @@
 
 body {
   background: #eee;
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
+}
+
+h1,
+h2,
+h3,
+div,
+p {
+  font-family: "Raleway", sans-serif;
 }
 
 .header {
@@ -57,7 +65,7 @@ body {
 }
 
 .next-year {
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 

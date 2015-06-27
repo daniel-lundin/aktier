@@ -5,7 +5,7 @@ function parse(data) {
   // Get rid of header
   var rows = data.split('\n');
 
-  var stockRows = rows.slice(3, 10);
+  var stockRows = rows.slice(3, 11);
 
   var result = {
     stocks: {},
