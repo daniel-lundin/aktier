@@ -16,12 +16,16 @@ html(ng-app="marre")
       h1 Placera mera!
     .container(ng-controller="MainController")
 
+      .panel.panel-success(ng-show="currentYear == 2015")
+        .panel-heading SLUT!
+        .panel-body Snipp snapp snut.
+
       .panel.panel-success(ng-show="currentYear == 2001")
         .panel-heading Spelregler
         .panel-body 
           p Året är 2001.
           p Du har fått tre barnbidrag + fler barnstillägg(3150 + 604 = 3754 kr) att placera på börsen.
-          p Under dagen förflyttar vi oss genom och tiden och du får möjlighet att placera om varje år.
+          p Under dagen förflyttar vi oss genom tiden och du får möjlighet att placera om varje år.
           p.lead Choose wisely!
 
       .panel.panel-default(ng-show="allData.yearTexts[yearIndex].heading")
@@ -29,7 +33,7 @@ html(ng-app="marre")
         .panel-body {{ allData.yearTexts[yearIndex].description }}
 
       .panel.panel-default
-        .panel-heading Tillgångar
+        .panel-heading Tillgångar {{currentYear}}
         .panel-body
           div Likvida medel:&nbsp;
            strong {{cash}} kr
@@ -38,7 +42,7 @@ html(ng-app="marre")
           div Totalt:&nbsp;
             strong {{totalValue()}} kr
           div Förändring:&nbsp;
-            strong {{ (totalValue() - originalCash) / 100}} %
+            strong {{ (totalValue() / originalCash) / 100}} %
 
       h2 Aktielista:
       ul.list-group
@@ -57,8 +61,9 @@ html(ng-app="marre")
               span.glyphicon.glyphicon-plus
               | Köp
 
-      p.lead Glöm inte göra en backup genom att dela sidan!
-      button.btn.btn-success.btn-block.next-year(ng-click="nextYear()") Gå till nästa år
+      div(ng-show="currentYear < 2015")
+        p.lead Glöm inte göra en backup genom att dela sidan!
+        button.btn.btn-success.btn-block.next-year(ng-click="nextYear()") Gå till nästa år
 
     if develop
       each jsFile in jsLibFiles
