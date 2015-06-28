@@ -25,6 +25,12 @@ angular.module('marre', [])
       return sum;
     };
 
+    $scope.percentage = function() {
+      var total = $scope.totalValue();
+      var increase = ((total - $scope.originalCash) / $scope.originalCash) * 100;
+      return increase.toFixed(2);
+    };
+
     $scope.init = function() {
       var shareToken = $scope.readShareUrl();
 

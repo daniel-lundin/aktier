@@ -42,7 +42,8 @@ html(ng-app="marre")
           div Totalt:&nbsp;
             strong {{totalValue()}} kr
           div Förändring:&nbsp;
-            strong {{ (totalValue() / originalCash) / 100}} %
+            strong {{ percentage() }} %
+            //-strong {{ (totalValue() / originalCash) / 100}} %
 
       h2 Aktielista:
       ul.list-group
